@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="fondo-home">
+
+    <!-- Barra de navegación superior -->
+    <nav>
+        <a href="home.html" class="logo">🏠 Inicio</a>
+        <div class="menu-desplegable">
+            <button class="btn-menu">📜 Cartas Leídas ▾</button>
+            <div class="contenido-desplegable" id="menu-leidas">
+                <!-- Se llena dinámicamente con JS -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal: iconos de cartas -->
+    <main class="contenedor-cartas">
+        <h1 class="titulo-principal">✨ Tus Cartas ✨</h1>
+        <p class="subtitulo-home">Cada carta es un recuerdo especial...</p>
+        <div class="grid-cartas" id="grid-cartas">
+            <!-- Se llena dinámicamente con JS -->
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            inicializarHome();
+        });
+    </script>
+</body>
+</html>
