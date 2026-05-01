@@ -1,0 +1,238 @@
+/* =============================================
+   FONDO DE LAS CARTAS
+   ============================================= */
+
+.fondo-carta {
+    background: linear-gradient(180deg, #fdf6f0 0%, #faf5ef 100%);
+    padding-top: 80px;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* =============================================
+   CONTENEDOR DE LA CARTA
+   ============================================= */
+
+.carta {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    padding: 50px 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+    line-height: 2;
+    font-size: 1.1em;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.carta h1 {
+    text-align: center;
+    color: #5d4e37;
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 2em;
+    letter-spacing: 3px;
+}
+
+.carta p {
+    margin-bottom: 15px;
+    color: #4a4a4a;
+}
+
+/* =============================================
+   IMÁGENES DENTRO DE CARTAS
+   ============================================= */
+
+.imagen-carta {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.imagen-carta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* =============================================
+   ZONAS SECRETAS / INTERACTIVAS
+   ============================================= */
+
+.zona-secreta {
+    text-align: center;
+    margin: 30px 0;
+    cursor: pointer;
+}
+
+.pista {
+    color: #b08d6a;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* =============================================
+   PREGUNTAS / INPUTS
+   ============================================= */
+
+.pregunta-secreta {
+    background: #fffaf3;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    text-align: center;
+    border: 1px dashed #d4c5b2;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.pregunta-secreta input {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 1em;
+    margin-right: 10px;
+    width: 250px;
+    transition: border-color 0.3s;
+}
+
+.pregunta-secreta input:focus {
+    outline: none;
+    border-color: #b08d6a;
+}
+
+.pregunta-secreta button {
+    padding: 10px 25px;
+    background: #b08d6a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.3s;
+}
+
+.pregunta-secreta button:hover {
+    background: #9a7b5a;
+}
+
+/* =============================================
+   INDICADORES (scroll, tiempo, etc.)
+   ============================================= */
+
+#indicador-scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    z-index: 999;
+    transition: all 0.5s;
+    font-size: 0.9em;
+}
+
+/* =============================================
+   TECLAS (para acción de melodía)
+   ============================================= */
+
+.tecla {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 2px solid #d4a373;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: bold;
+    color: #5d4e37;
+    user-select: none;
+}
+
+.tecla:hover {
+    background: #d4a373;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.tecla.activa {
+    background: #b08d6a;
+    color: white;
+    transform: scale(0.95);
+}
+
+/* =============================================
+   OPCIONES DE IMAGEN
+   ============================================= */
+
+.opcion-imagen {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.opcion-imagen:hover {
+    background: #faf5ef;
+    border-color: #d4a373;
+}
+
+.opcion-imagen img {
+    width: 100%;
+    border-radius: 8px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.opcion-imagen.correcta {
+    border-color: #4caf50;
+    background: #e8f5e9;
+    animation: brillo 0.5s;
+}
+
+.opcion-imagen.incorrecta {
+    border-color: #e57373;
+    animation: temblor 0.3s;
+}
+
+@keyframes brillo {
+    0%, 100% { box-shadow: 0 0 0 rgba(76, 175, 80, 0); }
+    50% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.5); }
+}
+
+@keyframes temblor {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* =============================================
+   RESPONSIVE PARA CARTAS
+   ============================================= */
+
+@media (max-width: 600px) {
+    .carta {
+        padding: 30px 20px;
+        margin: 0 10px 40px;
+    }
+    
+    .pregunta-secreta input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .carta h1 {
+        font-size: 1.5em;
+    }
+  }
