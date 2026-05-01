@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta 1</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/cartas.css">
+</head>
+<body class="fondo-carta">
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="../home.html" class="logo">🏠 Inicio</a>
+    </nav>
+
+    <!-- Contenido de la carta -->
+    <main class="carta">
+        <h1>🌸 Mi Primera Carta para Ti</h1>
+        
+        <p>Aquí va todo el texto bonito que quieras escribir...</p>
+        <p>Puedes agregar párrafos, imágenes, lo que desees.</p>
+        <p>Tómate tu tiempo para leer cada palabra, cada recuerdo...</p>
+        
+        <!-- Imagen con acción oculta -->
+        <div class="zona-secreta" id="secreto1">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=300" 
+                 alt="Flor" class="imagen-carta">
+            <p class="pista">🌷 Haz clic en la flor si ya leíste todo...</p>
+        </div>
+
+        <!-- Pregunta interactiva (aparece tras hacer clic) -->
+        <div class="pregunta-secreta" id="pregunta1" style="display: none;">
+            <p>🌟 ¿Cuál es nuestra canción favorita?</p>
+            <input type="text" id="respuesta1" placeholder="Escribe tu respuesta...">
+            <button onclick="verificarRespuesta()">Responder</button>
+            <p id="feedback1"></p>
+        </div>
+
+        <!-- Botón siguiente (aparece al completar todo) -->
+        <div id="boton-siguiente" style="display: none; text-align: center; margin-top: 30px;">
+            <p>✨ ¡Lo lograste! ✨</p>
+            <a href="carta2.html" class="btn-siguiente">Abrir Siguiente Carta →</a>
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Marcar esta carta como leída
+            marcarCartaLeida(1);
+            
+            // Evento: clic en la flor
+            document.getElementById('secreto1').addEventListener('click', function() {
+                this.style.display = 'none';
+                document.getElementById('pregunta1').style.display = 'block';
+            });
+        });
+
+        function verificarRespuesta() {
+            const respuesta = document.getElementById('respuesta1').value.toLowerCase();
+            // CAMBIA ESTO por tu canción/palabra especial
+            if (respuesta.includes('perfect') || respuesta.includes('ed sheeran')) {
+                document.getElementById('feedback1').textContent = '¡Correcto! 💕';
+                document.getElementById('boton-siguiente').style.display = 'block';
+                // Desbloquear la carta 2
+                desbloquearCarta(2);
+            } else {
+                document.getElementById('feedback1').textContent = 'No es esa... piensa un poco más 🎵';
+            }
+        }
+    </script>
+</body>
+</html>
