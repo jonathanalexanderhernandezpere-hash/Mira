@@ -1,0 +1,123 @@
+/* =============================================
+   FONDO DEL HOME
+   ============================================= */
+
+.fondo-home {
+    background: linear-gradient(180deg, #fdf6f0 0%, #faf0e6 50%, #f5e6d8 100%);
+    min-height: 100vh;
+    padding-top: 80px;
+    background-attachment: fixed;
+}
+
+/* =============================================
+   TÍTULO PRINCIPAL
+   ============================================= */
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2.5em;
+    color: #5d4e37;
+    margin: 40px 0 20px;
+    font-weight: normal;
+    letter-spacing: 5px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.subtitulo-home {
+    text-align: center;
+    color: #b08d6a;
+    font-style: italic;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    animation: fadeIn 1s ease-out;
+}
+
+/* =============================================
+   GRID DE CARTAS
+   ============================================= */
+
+.grid-cartas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 30px;
+}
+
+.tarjeta-carta {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    animation: fadeIn 0.6s ease-out both;
+}
+
+.tarjeta-carta:nth-child(1) { animation-delay: 0.1s; }
+.tarjeta-carta:nth-child(2) { animation-delay: 0.2s; }
+.tarjeta-carta:nth-child(3) { animation-delay: 0.3s; }
+.tarjeta-carta:nth-child(4) { animation-delay: 0.4s; }
+.tarjeta-carta:nth-child(5) { animation-delay: 0.5s; }
+
+.tarjeta-carta:not(.bloqueada):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-color: #e0d5c7;
+}
+
+.tarjeta-carta.bloqueada {
+    background: #f5f5f5;
+}
+
+.icono-carta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-decoration: none;
+    color: inherit;
+    min-height: 180px;
+}
+
+.icono-carta .sobre {
+    font-size: 3em;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.tarjeta-carta:not(.bloqueada):hover .sobre {
+    transform: scale(1.1);
+}
+
+.icono-carta .candado {
+    font-size: 3em;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.icono-carta p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #5d4e37;
+}
+
+.icono-carta small {
+    color: #888;
+    font-size: 0.8em;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 600px) {
+    .grid-cartas {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    .titulo-principal {
+        font-size: 2em;
+    }
+}
