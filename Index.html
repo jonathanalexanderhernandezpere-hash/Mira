@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Espera un momento...</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="fondo-cerezos">
+    
+    <!-- Contenedor de pétalos (se llena con JS) -->
+    <div id="contenedor-petalos"></div>
+    
+    <!-- Capa de partículas de luz -->
+    <div id="particulas-luz"></div>
+    
+    <!-- Contenido central -->
+    <div class="contenido-central">
+        
+        <!-- Luna decorativa -->
+        <div class="luna">🌙</div>
+        
+        <!-- Título con animación -->
+        <h1 class="titulo-contador">
+            <span class="texto-brillo">Algo hermoso</span>
+            <span class="texto-secundario">está por llegar...</span>
+        </h1>
+        
+        <!-- Contador -->
+        <div class="contador-container">
+            <div class="bloque-tiempo">
+                <span id="dias" class="numero-tiempo">00</span>
+                <span class="etiqueta-tiempo">Días</span>
+            </div>
+            <span class="separador-tiempo">:</span>
+            <div class="bloque-tiempo">
+                <span id="horas" class="numero-tiempo">00</span>
+                <span class="etiqueta-tiempo">Horas</span>
+            </div>
+            <span class="separador-tiempo">:</span>
+            <div class="bloque-tiempo">
+                <span id="minutos" class="numero-tiempo">00</span>
+                <span class="etiqueta-tiempo">Minutos</span>
+            </div>
+            <span class="separador-tiempo">:</span>
+            <div class="bloque-tiempo">
+                <span id="segundos" class="numero-tiempo">00</span>
+                <span class="etiqueta-tiempo">Segundos</span>
+            </div>
+        </div>
+        
+        <!-- Frase inferior -->
+        <p class="frase-inferior">Mientras tanto, disfruta la espera...</p>
+        
+        <!-- Botón de control de música -->
+        <button id="btn-musica" class="btn-musica" onclick="toggleMusica()">
+            🎵 <span id="texto-musica">Pausar música</span>
+        </button>
+
+        <!-- Instrucción para activar audio -->
+        <p class="instruccion-audio" id="instruccion-audio">
+            🎐 Toca la pantalla para escuchar la música...
+        </p>
+        
+    </div>
+    
+    <!-- Reproductor de YouTube oculto -->
+    <div id="youtube-player" style="position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px;"></div>
+
+    <script src="js/script.js"></script>
+    
+    <!-- API de YouTube -->
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+    
+</body>
+</html>
