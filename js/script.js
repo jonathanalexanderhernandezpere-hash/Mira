@@ -2,12 +2,12 @@
 // ⚙️ CONFIGURACIÓN
 // =============================================
 
-const FECHA_OBJETIVO = new Date("2026-12-25T00:00:00").getTime();
+const FECHA_OBJETIVO = new Date("2026-05-17T00:00:00").getTime();
 const TOTAL_CARTAS = 3;
 
 // 🎵 VIDEO DE YOUTUBE PARA MÚSICA DE FONDO
 // Cambia este ID por el de tu video
-const YOUTUBE_VIDEO_ID = "jfKfPfyJRdk"; // lofi hip hop radio
+const YOUTUBE_VIDEO_ID = "K5Ni6Zh6MCY"; // lofi hip hop radio
 
 // =============================================
 // 🌸 1. PÉTALOS DE CEREZO
