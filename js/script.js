@@ -2,7 +2,7 @@
 // ⚙️ CONFIGURACIÓN
 // =============================================
 
-const FECHA_OBJETIVO = new Date("2025-04-17T00:00:00").getTime();
+const FECHA_OBJETIVO = new Date("2026-05-02T00:00:00").getTime();
 const TOTAL_CARTAS = 3;
 
 // 🎵 VIDEO DE YOUTUBE PARA MÚSICA DE FONDO
